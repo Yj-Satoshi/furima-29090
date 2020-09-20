@@ -83,6 +83,7 @@ Things you may want to cover:
 | Column            | Type       | Options                        |
 | ----------------- | ---------- | -------------------------------|
 | purchase          | references | null: false, foreign_key: true |
+| posal_code        | string     | null: false                    |
 | prefecture_id     | integer    | null: false                    |
 | municipalities_id | integer    | null: false                    |
 | adress_id         | integer    | null: false                    |

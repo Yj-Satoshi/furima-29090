@@ -35,29 +35,28 @@ Things you may want to cover:
 | first_name_kanji   | string | null: false |
 | family_name_kana   | string | null: false |
 | first_name_kana    | string | null: false |
-| birth_year         | string | null: false |
-| birth_month        | string | null: false |
-| birth_day          | string | null: false |
+| birth_day          | date   | null: false |
+
 
 ### Association
 
-- has_many :item
-- has_many :purchase
+- has_many :items
+- has_many :purchases
 
 
 ## items テーブル
 
-| Column      | Type       | Options                        |
-| ----------- | ---------- | ------------------------------ |
-| user        | references | null: false, foreign_key: true |
-| item_name   | string     | null: false                    |
-| item_image  | string     | null: false                    |
-| explanaton  | string     | null: false                    |
-| price       | string     | null: false                    |
-| category    | string     | null: false                    |
-| item_status | string     | null: false                    |
-| send_area   | string     | null: false                    |
-| send_date   | string     | null: false                    |
+| Column         | Type       | Options                        |
+| -------------- | ---------- | ------------------------------ |
+| user           | references | null: false, foreign_key: true |
+| name           | string     | null: false                    |
+| explanaton     | text       | null: false                    |
+| price          | integer    | null: false                    |
+| category_id    | integer    | null: false                    |
+| item_status_id | integer    | null: false                    |
+| send_area_id   | integer    | null: false                    |
+| send_date_id   | integer    | null: false                    |
+| send_fee_id    | integer    | null: false                    |
 
 ### Association
 
@@ -72,15 +71,25 @@ Things you may want to cover:
 | item             | references | null: false, foreign_key: true |
 | user             | references | null: false, foreign_key: true |
 | credit_card_info | string     | null: false                    |
-| expriration_date | string     | null: false                    |
-| securitu_code    | string     | null: false                    |
-| postal_code      | string     | null: false                    |
-| prefecture       | string     | null: false                    |
-| municipalities   | string     | null: false                    |
-| adress           | string     | null: false                    |
-| building         | string     | null: true                     |
 
 ### Association
 
 - belongs_to :item
 - belongs_to :user
+- has_one :adress
+
+## adresses テーブル
+
+| Column            | Type       | Options                        |
+| ----------------- | ---------- | -------------------------------|
+| purchase          | references | null: false, foreign_key: true |
+| prefecture_id     | integer    | null: false                    |
+| municipalities_id | integer    | null: false                    |
+| adress_id         | integer    | null: false                    |
+| building          | string     | null: true                     |
+| phone_number      | string     | null: false                    |
+
+
+### Association
+
+- belongs_to :purchase

@@ -70,7 +70,6 @@ Things you may want to cover:
 | ---------------- | ---------- | ------------------------------ |
 | item             | references | null: false, foreign_key: true |
 | user             | references | null: false, foreign_key: true |
-| credit_card_info | string     | null: false                    |
 
 ### Association
 

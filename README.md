@@ -30,7 +30,7 @@ Things you may want to cover:
 | ------------------ | ------ | ----------- |
 | nickname           | string | null: false |
 | email              | string | null: false |
-| password           | string | null: false |
+| encrypted_password | string | null: false |
 | family_name_kanji  | string | null: false |
 | first_name_kanji   | string | null: false |
 | family_name_kana   | string | null: false |
@@ -76,9 +76,9 @@ Things you may want to cover:
 
 - belongs_to :item
 - belongs_to :user
-- has_one :adress
+- has_one :address
 
-## adresses テーブル
+## addresses テーブル
 
 | Column            | Type       | Options                        |
 | ----------------- | ---------- | -------------------------------|
@@ -86,8 +86,8 @@ Things you may want to cover:
 | posal_code        | string     | null: false                    |
 | prefecture_id     | integer    | null: false                    |
 | municipalities_id | integer    | null: false                    |
-| adress_id         | integer    | null: false                    |
-| building          | string     | null: true                     |
+| address           | string     | null: false                    |
+| building          | string     |                                |
 | phone_number      | string     | null: false                    |
 
 

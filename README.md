@@ -84,7 +84,7 @@ Things you may want to cover:
 | purchase          | references | null: false, foreign_key: true |
 | posal_code        | string     | null: false                    |
 | prefecture_id     | integer    | null: false                    |
-| municipalities_id | integer    | null: false                    |
+| municipalities    | string     | null: false                    |
 | address           | string     | null: false                    |
 | building          | string     |                                |
 | phone_number      | string     | null: false                    |

@@ -17,5 +17,5 @@ end
 validates :email, format: { with: /@.+/ } 
 
 validates :password,    length: { minimum: 6 }   
-
+validates :nickname, :birth_day, presence: true
 end

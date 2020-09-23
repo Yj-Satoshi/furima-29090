@@ -14,8 +14,10 @@ with_options presence: true, format: { with: /\A[ァ-ン]+\z/ } do
   validates :family_name_kana
 end
 
-validates :email, format: { with: /@.+/ } 
+with_options presence: true, format: { with: /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i }, length: { minimum: 6 }  do
+  validates :password
+end
 
-validates :password,    length: { minimum: 6 }   
+validates :email, format: { with: /@.+/ } 
 validates :nickname, :birth_day, presence: true
 end

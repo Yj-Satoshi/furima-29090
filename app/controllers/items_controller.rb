@@ -1,12 +1,10 @@
 class ItemsController < ApplicationController
     def index
-        # item = Item.all
         @item = Item.all.new
         @items = Item.includes(:user)
     end
 
     def new
-        # @item = Item.new(item_params)
         @item = Item.new
     end
 
@@ -14,6 +12,8 @@ class ItemsController < ApplicationController
         @item = Item.new(item_params)
         if @item.save
             redirect_to root_path
+        else
+            render :new
         end
     end
 

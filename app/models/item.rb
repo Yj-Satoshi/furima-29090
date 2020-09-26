@@ -13,7 +13,7 @@ class Item < ApplicationRecord
         validates :name, :explanation, :price, :category_id, :item_status_id, :send_area_id, :send_date_id, :send_fee_id ,:image
     end
     
-    with_options numericality: { other_than: 1} do
+    with_options numericality: { other_than: 1, message: ' select'} do
         validates :category_id, :item_status_id, :send_area_id, :send_date_id, :send_fee_id
     end
 end

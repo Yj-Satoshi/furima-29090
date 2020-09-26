@@ -1,4 +1,10 @@
 class ItemsController < ApplicationController
+    def index
+        # item = Item.all
+        @item = Item.all.new
+        @items = Item.includes(:user)
+    end
+
     def new
         # @item = Item.new(item_params)
         @item = Item.new
@@ -11,9 +17,6 @@ class ItemsController < ApplicationController
         end
     end
 
-    def index
-        @items = Item.all
-    end
 
     private
 

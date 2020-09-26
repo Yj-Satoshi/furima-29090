@@ -1,5 +1,5 @@
 class ItemStatusChoice < ActiveHash::Base
-    self.date = [
+    self.data = [
         { id: 1, choice: '---' },
         { id: 2, choice: '新品、未使用' },
         { id: 3, choice: '未使用に近い' },

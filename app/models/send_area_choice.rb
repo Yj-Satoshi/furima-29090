@@ -1,5 +1,5 @@
 class SendAreaChoice < ActiveHash::Base
-    self.date = [
+    self.data = [
         { id: 1, choice: '---' },
         { id: 2, choice: "北海道"},
         { id: 3, choice: "青森県"},

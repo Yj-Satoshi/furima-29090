@@ -1,5 +1,5 @@
 class CategoryChoice < ActiveHash::Base
-    self.date = [
+    self.data = [
         { id: 1, choice: '---' },
         { id: 2, choice: 'レディース' },
         { id: 3, choice: 'メンズ' },

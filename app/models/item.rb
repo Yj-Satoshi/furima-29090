@@ -16,4 +16,6 @@ class Item < ApplicationRecord
     with_options numericality: { other_than: 1, message: ' select'} do
         validates :category_id, :item_status_id, :send_area_id, :send_date_id, :send_fee_id
     end
+
+    validates :price, format: { with: /\A[0-9]+\z/ , message: ' 半角数字で入力' }, numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999 }, numericality: { only_integer: true, message: ' 半角数字で入力' }
 end

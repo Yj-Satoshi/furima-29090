@@ -8,8 +8,9 @@ FactoryBot.define do
     send_area_id { Faker::Number.digit }
     send_date_id { Faker::Number.digit }
     send_fee_id { Faker::Number.digit }
-   
-    end
+
+    association :user
+
   end
 
 end

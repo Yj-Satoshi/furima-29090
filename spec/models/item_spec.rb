@@ -88,7 +88,7 @@ describe '商品出品' do
     expect(@item.errors.full_messages).to include("Price  半角数字(¥300〜9,999,999)で入力")
   end
   it "priceが300円未満の場合では登録できないこと" do
-    @item.price = "299"
+    @item.price = 299
     @item.valid?
     expect(@item.errors.full_messages).to include("Price  半角数字(¥300〜9,999,999)で入力")
   end

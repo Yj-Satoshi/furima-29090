@@ -127,35 +127,39 @@
     <ul class='item-lists'>
 
       <%# 商品のインスタンス変数になにか入っている場合、中身のすべてを展開できるようにしましょう %>
-    <%# <% @items.each do |item| %>    
+    <% @items.each do |item| %>    
       <li class='list'>
 
-        <%# <%= link_to "#" do %> %>
+        <%= link_to "#" do %>
           <div class='item-img-content'>
-            <%# <%= image_tag item.image, class: "item-img" %> 
+            <%= image_tag item.image, class: "item-img" %> 
 
             <%# 商品が売れていればsold outを表示しましょう %>
-            <%# <div class='sold-out'>
-              <span>Sold Out!!</span>
-            </div> %>
+            <%# 購入テーブル(purchases)内に該当商品(purchases)のidが見つかれば"Sold"を表示する(購入機能実装後着手) %>
+            <%# <% if @purchase("Purchase.find(params[:item_id]") = item.id %> 
+              <%# <div class='sold-out'>
+                <span>Sold Out!!</span>
+              </div> %>
+            <%# <% end %> 
+
             <%# //商品が売れていればsold outを表示しましょう %>
 
           </div>
           <div class='item-info'>          
             <h3 class='item-name'>
-              <%# <%= item.name %>
+              <%= item.name %>
             </h3>
             <div class='item-price'>
-              <%# <span><%= item.price円<br>(税込み)</span> %> 
+              <span><%= item.price %>円<br>(税込み)</span>
               <div class='star-btn'>
                 <%= image_tag "star.png", class:"star-icon" %>
                 <span class='star-count'>0</span>
               </div>
             </div>
           </div>
-        <%# <% end %> 
+        <% end %> 
       </li>
-    <%# <% end %> 
+    <% end %> 
       <%# //商品のインスタンス変数になにか入っている場合、中身のすべてを展開できるようにしましょう %>
 
       <%# 商品がない場合のダミー %>

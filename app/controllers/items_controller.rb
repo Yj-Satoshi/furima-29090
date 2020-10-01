@@ -2,7 +2,7 @@ class ItemsController < ApplicationController
     before_action :move_to_sign_in, except: [:index, :show, :search]
 
     def index
-        @items = Item.includes(:user)
+        @items = Item.includes(:user).order("created_at ASC")
     end
 
     def new

@@ -2,7 +2,6 @@ class ItemsController < ApplicationController
     before_action :move_to_sign_in, except: [:index, :show, :search]
 
     def index
-        @item = Item.all.new
         @items = Item.includes(:user)
     end
 

@@ -1,16 +1,18 @@
 class ItemsController < ApplicationController
+    before_action :set_item, only: [:show]
     before_action :move_to_sign_in, except: [:index, :show, :search]
 
     def index
         @items = Item.includes(:user).order("created_at DESC")
     end
 
-    def show
-        
-    end
-
+    
     def new
         @item = Item.new
+    end
+    
+    def show
+
     end
 
     def create
@@ -33,5 +35,9 @@ class ItemsController < ApplicationController
         unless user_signed_in?
             redirect_to  new_user_session_path
         end
+    end
+
+    def set_item
+        @item = Item.find(params[:id])
     end
 end

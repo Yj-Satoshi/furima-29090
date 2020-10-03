@@ -7,7 +7,6 @@ describe '商品出品' do
     @item.image = fixture_file_upload("/files/test_image.png")
   end
   it "name, explanation, price, category_choice_id, item_status_choice_id, send_date_choice_id, send_fee_choice_id, imageがあれば出品登録できる" do
-    # binding.pry
     expect(@item).to be_valid
   end
 

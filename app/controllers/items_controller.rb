@@ -13,7 +13,6 @@ class ItemsController < ApplicationController
     
     def show
         @items = Item.order("created_at DESC")
-        # binding.pry
     end
 
     def create

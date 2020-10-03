@@ -5,14 +5,15 @@ class ItemsController < ApplicationController
     def index
         @items = Item.includes(:user).order("created_at DESC")
     end
-
     
     def new
         @item = Item.new
     end
     
-    def show
-        @items = Item.order("created_at DESC")
+    def show    
+    end
+
+    def edit
     end
 
     def create

@@ -6,7 +6,7 @@ describe '商品出品' do
     @item = FactoryBot.build(:item)
     @item.image = fixture_file_upload("/files/test_image.png")
   end
-  it "name, explanation, price, category_id, item_status_id, send_date_id, send_fee_id, imageがあれば出品登録できる" do
+  it "name, explanation, price, category_choice_id, item_status_choice_id, send_date_choice_id, send_fee_choice_id, imageがあれば出品登録できる" do
     expect(@item).to be_valid
   end
 
@@ -25,30 +25,30 @@ describe '商品出品' do
     @item.valid?
     expect(@item.errors.full_messages).to include("Price can't be blank")
   end
-  it "category_idが空欄の場合登録できないこと" do
-    @item.category_id = nil 
+  it "category_choice_idが空欄の場合登録できないこと" do
+    @item.category_choice_id = nil 
     @item.valid?
-    expect(@item.errors.full_messages).to include("Category can't be blank", "Category  Other than '---' select")
+    expect(@item.errors.full_messages).to include("Category choice can't be blank", "Category choice  Other than '---' select")
   end
-  it "item_status_idが空欄の場合登録できないこと" do
-    @item.item_status_id = nil
+  it "item_status_choice_idが空欄の場合登録できないこと" do
+    @item.item_status_choice_id = nil
     @item.valid?
-    expect(@item.errors.full_messages).to include("Item status can't be blank", "Item status  Other than '---' select")
+    expect(@item.errors.full_messages).to include("Item status choice can't be blank", "Item status choice  Other than '---' select")
   end
-  it "send_area_idが空欄の場合登録できないこと" do
-    @item.send_area_id = nil 
+  it "send_area_choice_idが空欄の場合登録できないこと" do
+    @item.send_area_choice_id = nil 
     @item.valid?
-    expect(@item.errors.full_messages).to include("Send area can't be blank", "Send area  Other than '---' select")
+    expect(@item.errors.full_messages).to include("Send area choice can't be blank", "Send area choice  Other than '---' select")
   end
-  it "send_date_idが空欄の場合登録できないこと" do
-    @item.send_date_id = nil
+  it "send_date_choice_idが空欄の場合登録できないこと" do
+    @item.send_date_choice_id = nil
     @item.valid?
-    expect(@item.errors.full_messages).to include("Send date can't be blank", "Send date  Other than '---' select")
+    expect(@item.errors.full_messages).to include("Send date choice can't be blank", "Send date choice  Other than '---' select")
   end
-  it "send_fee_idが空欄の場合登録できないこと" do
-    @item.send_fee_id = nil
+  it "send_fee_choice_idが空欄の場合登録できないこと" do
+    @item.send_fee_choice_id = nil
     @item.valid?
-    expect(@item.errors.full_messages).to include("Send fee can't be blank", "Send fee  Other than '---' select")
+    expect(@item.errors.full_messages).to include("Send fee choice can't be blank", "Send fee choice  Other than '---' select")
   end
   it "imageが空欄の場合登録できないこと" do
     @item.image = nil
@@ -56,30 +56,30 @@ describe '商品出品' do
     expect(@item.errors.full_messages).to include("Image can't be blank")
   end
 
-  it "category_idが1の場合登録できないこと" do
-    @item.category_id = 1 
+  it "category_choice_idが1の場合登録できないこと" do
+    @item.category_choice_id = 1 
     @item.valid?
-    expect(@item.errors.full_messages).to include("Category  Other than '---' select")
+    expect(@item.errors.full_messages).to include("Category choice  Other than '---' select")
   end
-  it "item_status_idが1の場合登録できないこと" do
-    @item.item_status_id = 1
+  it "item_status_choice_idが1の場合登録できないこと" do
+    @item.item_status_choice_id = 1
     @item.valid?
-    expect(@item.errors.full_messages).to include("Item status  Other than '---' select")
+    expect(@item.errors.full_messages).to include("Item status choice  Other than '---' select")
   end
-  it "send_area_idが1の場合登録できないこと" do
-    @item.send_area_id = 1 
+  it "send_area_choice_idが1の場合登録できないこと" do
+    @item.send_area_choice_id = 1 
     @item.valid?
-    expect(@item.errors.full_messages).to include("Send area  Other than '---' select")
+    expect(@item.errors.full_messages).to include("Send area choice  Other than '---' select")
   end
-  it "send_date_idが1の場合登録できないこと" do
-    @item.send_date_id = 1
+  it "send_date_choice_idが1の場合登録できないこと" do
+    @item.send_date_choice_id = 1
     @item.valid?
-    expect(@item.errors.full_messages).to include("Send date  Other than '---' select")
+    expect(@item.errors.full_messages).to include("Send date choice  Other than '---' select")
   end
-  it "send_fee_idが1の場合登録できないこと" do
-    @item.send_fee_id = 1
+  it "send_fee_choice_idが1の場合登録できないこと" do
+    @item.send_fee_choice_id = 1
     @item.valid?
-    expect(@item.errors.full_messages).to include("Send fee  Other than '---' select")
+    expect(@item.errors.full_messages).to include("Send fee choice  Other than '---' select")
   end
 
   it "priceがの10,000,000円以上の場合では登録できないこと" do

@@ -38,11 +38,11 @@ ActiveRecord::Schema.define(version: 2020_09_26_065302) do
     t.string "name", default: "", null: false
     t.text "explanation", null: false
     t.integer "price", null: false
-    t.integer "category_id", null: false
-    t.integer "item_status_id", null: false
-    t.integer "send_area_id", null: false
-    t.integer "send_date_id", null: false
-    t.integer "send_fee_id", null: false
+    t.integer "category_choice_id", null: false
+    t.integer "item_status_choice_id", null: false
+    t.integer "send_area_choice_id", null: false
+    t.integer "send_date_choice_id", null: false
+    t.integer "send_fee_choice_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_items_on_user_id"

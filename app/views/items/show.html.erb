@@ -49,24 +49,26 @@
         <tr>
           <th class="detail-item">カテゴリー</th>
           <td class="detail-value">
-            <%= CategoryChoice.data[(@item.category_id - 1)][:choice]  %> 
+            <%# <%= CategoryChoice.data[(@item.category_id - 1)][:choice]  %>
+            <%= @item.category_choice.choice %>
+ 
           </td> 
         </tr>
         <tr>
           <th class="detail-item">商品の状態</th>
-          <td class="detail-value"><%= ItemStatusChoice.data[(@item.item_status_id - 1)][:choice] %></td>
+          <td class="detail-value"><%= @item.item_status_choice.choice %></td>
         </tr>
         <tr>
           <th class="detail-item">配送料の負担</th>
-          <td class="detail-value"><%= SendFeeChoice.data[(@item.send_fee_id - 1)][:choice] %></td>
+          <td class="detail-value"><%= @item.send_fee_choice.choice %></td>
         </tr>
         <tr>
           <th class="detail-item">発送元の地域</th>
-          <td class="detail-value"><%= SendAreaChoice.data[(@item.send_area_id - 1)][:choice] %></td>
+          <td class="detail-value"><%= @item.send_area_choice.choice %></td>
         </tr>
         <tr>
           <th class="detail-item">発送日の目安</th>
-          <td class="detail-value"><%= SendDateChoice.data[(@item.send_date_id - 1)][:choice] %></td>
+          <td class="detail-value"><%= @item.send_date_choice.choice %></td>
         </tr>   
       </tbody>
     </table>

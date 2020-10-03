@@ -12,7 +12,8 @@ class ItemsController < ApplicationController
     end
     
     def show
-
+        @items = Item.order("created_at DESC")
+        # binding.pry
     end
 
     def create
@@ -28,7 +29,7 @@ class ItemsController < ApplicationController
     private
 
     def item_params
-        params.require(:item).permit(:image, :name, :explanation, :price, :category_id, :item_status_id, :send_area_id, :send_date_id, :send_fee_id).merge(user_id: current_user.id)
+        params.require(:item).permit(:image, :name, :explanation, :price, :category_choice_id, :item_status_choice_id, :send_area_choice_id, :send_date_choice_id, :send_fee_choice_id).merge(user_id: current_user.id)
     end
 
     def move_to_sign_in

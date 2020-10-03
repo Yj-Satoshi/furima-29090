@@ -50,12 +50,12 @@
           カテゴリー
           <span class="indispensable">必須</span>
         </div>
-        <%= f.collection_select(:category_id, CategoryChoice.all, :id, :choice, {}, {class:"select-box", id:"item-category"}) %>
+        <%= f.collection_select(:category_choice_id, CategoryChoice.all, :id, :choice, {}, {class:"select-box", id:"item-category"}) %>
         <div class="weight-bold-text">
           商品の状態
           <span class="indispensable">必須</span>
         </div>
-        <%= f.collection_select(:item_status_id, ItemStatusChoice.all, :id, :choice, {}, {class:"select-box", id:"item-sales-status"}) %>
+        <%= f.collection_select(:item_status_choice_id, ItemStatusChoice.all, :id, :choice, {}, {class:"select-box", id:"item-sales-status"}) %>
       </div>
     </div>
     <%# /商品の詳細 %>
@@ -71,17 +71,17 @@
           配送料の負担
           <span class="indispensable">必須</span>
         </div>
-        <%= f.collection_select(:send_fee_id, SendFeeChoice.all, :id, :choice, {}, {class:"select-box", id:"item-shipping-fee-status"}) %>
+        <%= f.collection_select(:send_fee_choice_id, SendFeeChoice.all, :id, :choice, {}, {class:"select-box", id:"item-shipping-fee-status"}) %>
         <div class="weight-bold-text">
           発送元の地域
           <span class="indispensable">必須</span>
         </div>
-        <%= f.collection_select(:send_area_id, SendAreaChoice.all, :id, :choice, {}, {class:"select-box", id:"item-prefecture"}) %>
+        <%= f.collection_select(:send_area_choice_id, SendAreaChoice.all, :id, :choice, {}, {class:"select-box", id:"item-prefecture"}) %>
         <div class="weight-bold-text">
           発送までの日数
           <span class="indispensable">必須</span>
         </div>
-        <%= f.collection_select(:send_date_id, SendDateChoice.all, :id, :choice, {}, {class:"select-box", id:"item-scheduled-delivery"}) %>
+        <%= f.collection_select(:send_date_choice_id, SendDateChoice.all, :id, :choice, {}, {class:"select-box", id:"item-scheduled-delivery"}) %>
       </div>
     </div>
     <%# /配送について %>

@@ -46,17 +46,17 @@ Things you may want to cover:
 
 ## items テーブル
 
-| Column         | Type       | Options                        |
-| -------------- | ---------- | ------------------------------ |
-| user           | references | null: false, foreign_key: true |
-| name           | string     | null: false                    |
-| explanation    | text       | null: false                    |
-| price          | integer    | null: false                    |
-| category_id    | integer    | null: false                    |
-| item_status_id | integer    | null: false                    |
-| send_area_id   | integer    | null: false                    |
-| send_date_id   | integer    | null: false                    |
-| send_fee_id    | integer    | null: false                    |
+| Column                | Type       | Options                        |
+| --------------------- | ---------- | ------------------------------ |
+| user                  | references | null: false, foreign_key: true |
+| name                  | string     | null: false                    |
+| explanation           | text       | null: false                    |
+| price                 | integer    | null: false                    |
+| category_choice_id    | integer    | null: false                    |
+| item_status_choice_id | integer    | null: false                    |
+| send_area_choice_id   | integer    | null: false                    |
+| send_date_choice_id   | integer    | null: false                    |
+| send_fee_choice_id    | integer    | null: false                    |
 
 ### Association
 

@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-    before_action :set_item, only: [:show]
+    before_action :set_item, only: [:show, :edit]
     before_action :move_to_sign_in, except: [:index, :show, :search]
 
     def index
@@ -14,6 +14,15 @@ class ItemsController < ApplicationController
     end
 
     def edit
+    end
+
+    def update
+        @item = Item.update(item_params)
+        if @item
+            redirect_to root_path
+        else
+            render :edit
+        end
     end
 
     def create

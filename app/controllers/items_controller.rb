@@ -14,6 +14,7 @@ class ItemsController < ApplicationController
     end
 
     def edit
+        edit_protect
     end
 
     def update
@@ -50,4 +51,12 @@ class ItemsController < ApplicationController
     def set_item
         @item = Item.find(params[:id])
     end
+
+    def edit_protect
+        @item = Item.find(params[:id])
+        unless current_user.id == @item.user.id
+            redirect_to root_path
+        end
+    end
+
 end

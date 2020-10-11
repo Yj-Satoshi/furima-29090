@@ -24,4 +24,5 @@ end
 validates :email, format: { with: /@.+/ } 
 
 has_many :items
+has_many :purchases
 end

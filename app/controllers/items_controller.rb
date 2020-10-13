@@ -2,7 +2,8 @@ class ItemsController < ApplicationController
     before_action :set_item, only: [:show, :edit, :update, :destroy]
     before_action :move_to_sign_in, except: [:index, :show, :search]
     before_action :edit_protect, only: [:edit, :destroy]
-
+    before_action :set_purchase, only: [:index, :show]
+    
     def index
         @items = Item.includes(:user).order("created_at DESC")
     end
@@ -57,6 +58,10 @@ class ItemsController < ApplicationController
 
     def set_item
         @item = Item.find(params[:id])
+    end
+
+    def set_purchase
+        @purchases = Purchase.all
     end
 
     def edit_protect

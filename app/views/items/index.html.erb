@@ -134,12 +134,13 @@
 
               <%# 商品が売れていればsold outを表示しましょう %>
               <%# 購入テーブル(purchases)内に該当商品(purchases)のidが見つかれば"Sold"を表示する(購入機能実装後着手) %>
-              <%# <% if @purchase("Purchase.find(params[:item_id]") = item.id %> 
-                <%# <div class='sold-out'>
-                  <span>Sold Out!!</span>
-                </div> %>
-              <%# <% end %> 
-
+              <% @purchases.each do |purchase| %> 
+                <% if  purchase.item_id == item.id  %>
+                <div class='sold-out'>
+                    <span>Sold Out!!</span>
+                  </div>
+                <% end %> 
+              <% end %> 
               <%# //商品が売れていればsold outを表示しましょう %>
 
             </div>

@@ -5,11 +5,10 @@ class PurchaseAddress
     with_options presence: true do
         validates :postal_code, format: {with:/\A[0-9]{3}-[0-9]{4}\z/, message: "is invalid. Include hyphen(-)"}
         validates :phone_number, format: {with:/\A[0-9]+\z/, message: "is invalid. Input Number"}, length: { maximum: 11}
-        validates :municipalities, :address
-        validates :token
+        validates :municipalities, :address, :phone_number, :token, presence: {message: "can't be blank"}
     end
 
-    validates :send_area_choice_id, numericality: { other_than: 1, message: " Other than '---' select"}
+    validates :send_area_choice_id, numericality: { other_than: 1, message: "Other than '---' select"}
 
 
     def save

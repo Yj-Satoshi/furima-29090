@@ -1,5 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe Address, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe '配送先登録' do
+    before do
+      @address = FactoryBot.build(:address)
+    end
+
+
 end

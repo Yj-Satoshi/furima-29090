@@ -32,6 +32,13 @@ class PurchasesController < ApplicationController
     def purchase_protect
         if current_user.id == @item.user_id
             redirect_to root_path
+        else
+            purchases = Purchase.all
+            purchases.each do |purchase| 
+                if  purchase.item_id == @item.id  
+                    redirect_to root_path
+                end
+            end 
         end
     end
 

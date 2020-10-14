@@ -27,7 +27,7 @@
     </div>
 
     <%# ログインしているユーザーと出品しているユーザーが、同一人物の場合と同一人物ではない場合で、処理を分けましょう %>
-    <% if @purchases = [] %>
+    <% if @purchases.blank? %>
       <% if user_signed_in? && current_user.id == @item.user_id %>
           <%= link_to '商品の編集', edit_item_path(@item), method: :get, class: "item-red-btn" %>
           <p class='or-text'>or</p>
@@ -40,8 +40,7 @@
       <% end %>
     <% end %>
     <% @purchases.each do |purchase| %> 
-      <% binding.pry %>
-      <% if  purchase.item_id != @item.id  or @purchases = [] %>
+      <% if  purchase.item_id != @item.id %>
         <% if user_signed_in? && current_user.id == @item.user_id %>
           <%= link_to '商品の編集', edit_item_path(@item), method: :get, class: "item-red-btn" %>
           <p class='or-text'>or</p>

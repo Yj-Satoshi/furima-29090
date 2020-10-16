@@ -45,6 +45,16 @@ RSpec.describe PurchaseAddress, type: :model do
       @purchase_address.valid?
       expect(@purchase_address.errors.full_messages).to include("Postal code is invalid. Include hyphen(-)")
     end  
+    it "postal_codeにハイフンがでないと登録できないこと" do
+      @purchase_address.postal_code = "1111111"
+      @purchase_address.valid?
+      expect(@purchase_address.errors.full_messages).to include("Postal code is invalid. Include hyphen(-)")
+    end  
+    it "send_area_choice_idが１の場合登録できないこと" do
+      @purchase_address.send_area_choice_id = "1"
+      @purchase_address.valid?
+      expect(@purchase_address.errors.full_messages).to include("Send area choice Other than '---' select")
+    end
     it "phone_numberが文字の場合登録できないこと" do
       @purchase_address.phone_number = "abcdefgi"
       @purchase_address.valid?

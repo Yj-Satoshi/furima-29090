@@ -1,6 +1,6 @@
 class PurchasesController < ApplicationController
     before_action :set_purchase, only: [:index, :new, :create]
-    before_action :move_to_sign_in
+    before_action :authenticate_user!
     before_action :purchase_protect
     def index
         @purchase_address = PurchaseAddress.new
@@ -21,12 +21,6 @@ class PurchasesController < ApplicationController
 
     def set_purchase
         @item = Item.find(params[:item_id])
-    end
-    
-    def move_to_sign_in
-        unless user_signed_in?
-            redirect_to  new_user_session_path
-        end
     end
     
     def purchase_protect

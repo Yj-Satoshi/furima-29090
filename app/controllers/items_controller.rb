@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
     before_action :set_item, only: [:show, :edit, :update, :destroy]
-    before_action :move_to_sign_in, except: [:index, :show, :search]
+    before_action :authenticate_user!, except: [:index, :show, :search]
     before_action :edit_protect, only: [:edit, :destroy]
     before_action :set_purchase, only: [:index, :show]
     
@@ -48,12 +48,6 @@ class ItemsController < ApplicationController
 
     def item_params
         params.require(:item).permit(:image, :name, :explanation, :price, :category_choice_id, :item_status_choice_id, :send_area_choice_id, :send_date_choice_id, :send_fee_choice_id).merge(user_id: current_user.id)
-    end
-
-    def move_to_sign_in
-        unless user_signed_in?
-            redirect_to  new_user_session_path
-        end
     end
 
     def set_item

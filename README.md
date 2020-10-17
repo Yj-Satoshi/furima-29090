@@ -82,7 +82,7 @@ Things you may want to cover:
 | Column            | Type       | Options                        |
 | ----------------- | ---------- | -------------------------------|
 | purchase          | references | null: false, foreign_key: true |
-| posal_code        | string     | null: false                    |
+| postal_code        | string     | null: false                    |
 | prefecture_id     | integer    | null: false                    |
 | municipalities    | string     | null: false                    |
 | address           | string     | null: false                    |
